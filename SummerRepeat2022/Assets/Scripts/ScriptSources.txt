@@ -1,0 +1,35 @@
+https://stackoverflow.com/questions/57205054/vector-3-array-how-to-assign-positions-to-vector3-array
+
+public static Vector3[] Steps;
+
+public static void Position()
+{
+    Steps = new Vector3[someSize];
+
+    Vector3 step = GameObject.Find("Step").transform.position;
+
+    Steps[0] = step;
+
+    Vector3 step1 = GameObject.Find("Step (1)").transform.position;
+    Steps[1] = step1;
+}
+
+I used this stack overflow answer to apply it in my code so i could create an array of fixed positions where the keys can spawn
+Then i added each position to the array so i can use random range to spawn a key in one of these positions.
+
+
+    public Vector3[] spawnPoints;
+
+public static void spawnPosition()
+{
+    Vector3[] spawnPoints = new Vector3[4];
+    
+    Vector3 spawnPos = new Vector3(12, -3f, 21.3f);
+    Vector3 spawnPos1 = new Vector3(-10.6f, -3f, 19.16f);
+    Vector3 spawnPos2 = new Vector3(15f, -3f, -.8f);
+    Vector3 spawnPos3 = new Vector3(-4f, -3f, 25.5f);
+    spawnPoints[0] = spawnPos;
+    spawnPoints[1] = spawnPos1;
+    spawnPoints[2] = spawnPos2;
+    spawnPoints[3] = spawnPos3;
+}
