@@ -6,6 +6,9 @@ TagManager:
   tags:
   - OuterWall
   - Enemy
+  - RedKey
+  - YellowKey
+  - BlueKey
   layers:
   - Default
   - TransparentFX
