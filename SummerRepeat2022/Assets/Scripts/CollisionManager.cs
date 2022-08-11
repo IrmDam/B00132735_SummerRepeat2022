@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyCollide : MonoBehaviour
+public class CollisionManager : MonoBehaviour
 {
     private GameManager gameManager;
     private PlayerController playerController;
+    private AudioSource playerAudio;
+    public AudioClip collectSound;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager")
             .GetComponent<GameManager>();
-            
+        playerAudio = GameObject.Find("Player").GetComponent<AudioSource>();
+        playerAudio.clip = collectSound;
     }
 
     // Update is called once per frame
@@ -22,9 +25,11 @@ public class KeyCollide : MonoBehaviour
 
         void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("YellowKey"))
         {
-            //playerController.playerAudio.PlayOneShot(playerController.collectSound, .32f);
+            playerAudio.clip = collectSound;
+            playerAudio.PlayOneShot(collectSound, 0.6f);
             gameManager.UpdateScoreYellow(true);
             Destroy(other.gameObject);
             
@@ -32,7 +37,8 @@ public class KeyCollide : MonoBehaviour
         }
         if (other.CompareTag("BlueKey"))
         {
-           //playerController.playerAudio.PlayOneShot(playerController.collectSound, .32f);
+           playerAudio.clip = collectSound;
+           playerAudio.PlayOneShot(collectSound, 0.6f);
             gameManager.UpdateScoreBlue(true);
             Destroy(other.gameObject);
             
@@ -40,7 +46,8 @@ public class KeyCollide : MonoBehaviour
         }
         if (other.CompareTag("RedKey"))
         {
-           //playerController.playerAudio.PlayOneShot(playerController.collectSound, .32f);
+           playerAudio.clip = collectSound;
+           playerAudio.PlayOneShot(collectSound, 0.6f);
             gameManager.UpdateScoreRed(true);
             Destroy(other.gameObject);
             
@@ -49,6 +56,7 @@ public class KeyCollide : MonoBehaviour
 
         if (other.CompareTag("KeyDoor"))
         {
+
             gameManager.DoorBump();
         }
  

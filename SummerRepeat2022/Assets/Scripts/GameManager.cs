@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
    public PlayerController playerController;
-   public KeyCollide keyCollide;
+   public CollisionManager collisionManager;
     private bool ykeyStatus;
     private bool bkeyStatus;
     private bool rkeyStatus;
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
    public void DoorBump()
    {
       reminder.text = "You need to find all of the keys first!";
-      playerController.doorAudio.PlayOneShot(playerController.deniedSound, 0.32f);
+      //playerController.doorAudio.PlayOneShot(playerController.deniedSound, 0.32f);
       
    }
 
