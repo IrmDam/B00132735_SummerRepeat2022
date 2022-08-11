@@ -1852,8 +1852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97a343e7e6750044a61bab484a9681a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudio: {fileID: 1008064540}
   collectSound: {fileID: 8300000, guid: b2912998eea4ea24da35cab2cae7a92b, type: 3}
+  deniedSound: {fileID: 0}
 --- !u!1 &718832130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,8 +2700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97a343e7e6750044a61bab484a9681a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudio: {fileID: 1008064540}
   collectSound: {fileID: 8300000, guid: b2912998eea4ea24da35cab2cae7a92b, type: 3}
+  deniedSound: {fileID: 8300000, guid: b6434cdb202a4104b8905bcf127d159d, type: 3}
 --- !u!65 &1008064534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4771,8 +4771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97a343e7e6750044a61bab484a9681a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudio: {fileID: 1008064540}
   collectSound: {fileID: 8300000, guid: b2912998eea4ea24da35cab2cae7a92b, type: 3}
+  deniedSound: {fileID: 0}
 --- !u!1 &1810320247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,8 +5654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97a343e7e6750044a61bab484a9681a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudio: {fileID: 1008064540}
   collectSound: {fileID: 8300000, guid: b2912998eea4ea24da35cab2cae7a92b, type: 3}
+  deniedSound: {fileID: 0}
 --- !u!135 &2085459871
 SphereCollider:
   m_ObjectHideFlags: 0

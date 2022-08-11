@@ -8,6 +8,7 @@ public class CollisionManager : MonoBehaviour
     private PlayerController playerController;
     private AudioSource playerAudio;
     public AudioClip collectSound;
+    public AudioClip deniedSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class CollisionManager : MonoBehaviour
         if (other.CompareTag("YellowKey"))
         {
             playerAudio.clip = collectSound;
-            playerAudio.PlayOneShot(collectSound, 0.6f);
+            playerAudio.PlayOneShot(collectSound, 1);
             gameManager.UpdateScoreYellow(true);
             Destroy(other.gameObject);
             
@@ -38,7 +39,7 @@ public class CollisionManager : MonoBehaviour
         if (other.CompareTag("BlueKey"))
         {
            playerAudio.clip = collectSound;
-           playerAudio.PlayOneShot(collectSound, 0.6f);
+           playerAudio.PlayOneShot(collectSound, 1);
             gameManager.UpdateScoreBlue(true);
             Destroy(other.gameObject);
             
@@ -47,7 +48,7 @@ public class CollisionManager : MonoBehaviour
         if (other.CompareTag("RedKey"))
         {
            playerAudio.clip = collectSound;
-           playerAudio.PlayOneShot(collectSound, 0.6f);
+           playerAudio.PlayOneShot(collectSound, 1);
             gameManager.UpdateScoreRed(true);
             Destroy(other.gameObject);
             
@@ -56,7 +57,8 @@ public class CollisionManager : MonoBehaviour
 
         if (other.CompareTag("KeyDoor"))
         {
-
+            playerAudio.clip = deniedSound;
+            playerAudio.PlayOneShot(deniedSound, 1);
             gameManager.DoorBump();
         }
  

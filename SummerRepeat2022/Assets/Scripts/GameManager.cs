@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private bool ykeyStatus;
     private bool bkeyStatus;
     private bool rkeyStatus;
+    private bool isWarningActive;
     private string ykeyStatusString;
     private string bkeyStatusString;
     private string rkeyStatusString;
@@ -23,13 +24,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       isWarningActive = false;
        ykeyStatus = false;
        rkeyStatus = false;
        bkeyStatus = false;
        UpdateScoreYellow(ykeyStatus);
        UpdateScoreRed(rkeyStatus);
        UpdateScoreBlue(bkeyStatus);
-       
+       StartCoroutine(showWarning());
     }
 
     // Update is called once per frame
@@ -111,9 +113,26 @@ public class GameManager : MonoBehaviour
    
    public void DoorBump()
    {
-      reminder.text = "You need to find all of the keys first!";
+      isWarningActive = true;
       //playerController.doorAudio.PlayOneShot(playerController.deniedSound, 0.32f);
       
    }
+
+   IEnumerator showWarning()
+   {
+      while(true)
+      {
+         if(isWarningActive)
+         {
+         reminder.text = "You need to find all of the keys first!";
+         isWarningActive = false;
+         }
+         yield return new WaitForSeconds(4.0f);
+         reminder.text = " ";
+      }
+   }
+   
+   
+
 
 }
