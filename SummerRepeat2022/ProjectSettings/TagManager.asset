@@ -9,6 +9,8 @@ TagManager:
   - RedKey
   - YellowKey
   - BlueKey
+  - KeyDoor
+  - Exit
   layers:
   - Default
   - TransparentFX
