@@ -2,3 +2,7 @@ https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573
 Enemy: https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762
 Key Particles and Outer sphere; https://assetstore.unity.com/packages/vfx/particles/powerup-particles-16458
 https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/free-low-poly-human-rpg-character-219979
+
+Pickup sound effect: https://www.dropbox.com/s/53xqc9yptiz12x1/SH2%20Recieve%20Item.mp3?dl=0
+Door Sound: https://www.youtube.com/watch?v=Ouem2uX1uHo
+Maze Background Music: https://www.youtube.com/watch?v=XxTAgwnu4M8

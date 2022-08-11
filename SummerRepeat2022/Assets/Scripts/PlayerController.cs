@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public KeyCollide keyCollide;
+    public AudioClip collectSound;
+    new public AudioSource playerAudio;
     public float horizontalInput;
     public float verticalInput;
     private float turnSpeed = 150.0f;
@@ -11,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,5 +25,12 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
         transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime * horizontalInput);
+
+
+        
     }
+     public void playCollectSound()
+        {
+            playerAudio.PlayOneShot(collectSound, 0.32f);
+        }
 }

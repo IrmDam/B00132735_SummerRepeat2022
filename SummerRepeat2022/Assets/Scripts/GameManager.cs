@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+   public KeyCollide keyCollide;
     private bool ykeyStatus;
     private bool bkeyStatus;
     private bool rkeyStatus;
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI BlueKeyStatus;
     public TextMeshProUGUI RedKeyStatus;
     public TextMeshProUGUI Objective;
+    public TextMeshProUGUI reminder;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,8 +102,15 @@ public class GameManager : MonoBehaviour
 
    public void StartLevel1()
    {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      SceneManager.LoadScene("Level1", LoadSceneMode.Single);
    }
+
    
+   public void DoorBump()
+   {
+      reminder.text = "You need to find all of the keys first!";
+      
+      
+   }
 
 }
