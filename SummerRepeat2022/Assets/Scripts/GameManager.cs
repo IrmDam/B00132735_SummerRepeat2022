@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+   public PlayerController playerController;
    public KeyCollide keyCollide;
     private bool ykeyStatus;
     private bool bkeyStatus;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
        UpdateScoreYellow(ykeyStatus);
        UpdateScoreRed(rkeyStatus);
        UpdateScoreBlue(bkeyStatus);
+       
     }
 
     // Update is called once per frame
@@ -38,15 +40,15 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScoreYellow(bool ykeyStatus)
     {
-       
-       if(ykeyStatus == false)
+       this.ykeyStatus = ykeyStatus;
+       if(this.ykeyStatus == false)
        {
         ykeyStatusString= " X ";
         YellowKeyStatus.text = "Yellow Key: " + ykeyStatusString;
        }
        else
        {
-        ykeyStatusString= " O ";
+        ykeyStatusString= " Found! ";
         YellowKeyStatus.text = "Yellow Key: " + ykeyStatusString;
         
        }
@@ -58,14 +60,14 @@ public class GameManager : MonoBehaviour
     public void UpdateScoreRed(bool rkeyStatus)
     {
      
-
-       if(rkeyStatus == false)
+      this.rkeyStatus = rkeyStatus;
+       if(this.rkeyStatus == false)
        {
         rkeyStatusString= " X ";
        }
         else
        {
-        rkeyStatusString= " O ";
+        rkeyStatusString= " Found! ";
         
        }
 
@@ -75,15 +77,15 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScoreBlue(bool bkeyStatus)
     {
-         
-       if(bkeyStatus == false)
+      this.bkeyStatus = bkeyStatus;   
+       if(this.bkeyStatus == false)
        {
         bkeyStatusString= " X ";
         BlueKeyStatus.text = "Red Key: " + bkeyStatusString;
        }
        else
        {
-        bkeyStatusString= " O ";
+        bkeyStatusString= " Found! ";
         BlueKeyStatus.text = "Red Key: " + bkeyStatusString;
         
        }
@@ -95,7 +97,8 @@ public class GameManager : MonoBehaviour
       {
          Objective.text = "Head for the exit!";
          exitDoor = GameObject.FindWithTag("KeyDoor");
-         Destroy(exitDoor.gameObject);
+         Destroy(exitDoor);
+         
       }
 
    }
@@ -109,7 +112,7 @@ public class GameManager : MonoBehaviour
    public void DoorBump()
    {
       reminder.text = "You need to find all of the keys first!";
-      
+      playerController.doorAudio.PlayOneShot(playerController.deniedSound, 0.32f);
       
    }
 

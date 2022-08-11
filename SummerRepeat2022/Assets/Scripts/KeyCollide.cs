@@ -24,23 +24,26 @@ public class KeyCollide : MonoBehaviour
     {
         if (other.CompareTag("YellowKey"))
         {
+            //playerController.playerAudio.PlayOneShot(playerController.collectSound, .32f);
             gameManager.UpdateScoreYellow(true);
             Destroy(other.gameObject);
-            playerController.playCollectSound();
+            
             gameManager.WinCheck();
         }
         if (other.CompareTag("BlueKey"))
         {
+           //playerController.playerAudio.PlayOneShot(playerController.collectSound, .32f);
             gameManager.UpdateScoreBlue(true);
             Destroy(other.gameObject);
-            playerController.playCollectSound();
+            
             gameManager.WinCheck();
         }
         if (other.CompareTag("RedKey"))
         {
+           //playerController.playerAudio.PlayOneShot(playerController.collectSound, .32f);
             gameManager.UpdateScoreRed(true);
             Destroy(other.gameObject);
-            playerController.playCollectSound();
+            
             gameManager.WinCheck();
         }
 

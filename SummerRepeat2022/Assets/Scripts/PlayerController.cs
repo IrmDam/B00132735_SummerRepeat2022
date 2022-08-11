@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public KeyCollide keyCollide;
     public AudioClip collectSound;
     new public AudioSource playerAudio;
+    
+    public AudioClip deniedSound;
+    new public AudioSource doorAudio;
     public float horizontalInput;
     public float verticalInput;
     private float turnSpeed = 150.0f;
@@ -15,6 +18,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerAudio = GetComponent<AudioSource>();
+        deniedSound = Resources.Load<AudioClip>("Access Denied");
+        collectSound = Resources.Load<AudioClip>("SH2 Recieve Item");
+        
     }
 
     // Update is called once per frame
@@ -31,6 +37,6 @@ public class PlayerController : MonoBehaviour
     }
      public void playCollectSound()
         {
-            playerAudio.PlayOneShot(collectSound, 0.32f);
+            playerAudio.PlayOneShot(collectSound, .32f);
         }
 }
