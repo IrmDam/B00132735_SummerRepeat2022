@@ -11,6 +11,8 @@ TagManager:
   - BlueKey
   - KeyDoor
   - Exit
+  - TimerTag
+  - ExitLvl2
   layers:
   - Default
   - TransparentFX

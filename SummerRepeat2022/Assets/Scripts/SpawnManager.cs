@@ -5,16 +5,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] keyPrefab;
-    private Vector3 Min;
-    private Vector3 Max;
-    private float _xAxis;
-    private float _zAxis;
-    private Vector3 _randomPosition;
-    private float _xAxis1;
-    private float _zAxis1;
-    private Vector3 _randomPosition1;
-    public bool _canInstantiate;
-
     public Vector3[] spawnPoints;
 
 public static void spawnPosition()
@@ -40,30 +30,12 @@ public static void spawnPosition()
 }
 
 
-    //public Vector3 spawnPoints[] = (new Vector3(12, -3f, 21.3f), new Vector3(-10.6f, -3f, 19.16f));
-   //public Vector3 spawnPos2 = new Vector3(-10.6f, -3f, 19.16f);
-
-    
-
- /* Transform GetSpawnPoint()
-    {
-        int locationIndex = 
-        return spawnPoints[locationIndex];
-    }*/
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPosition();
-        
-        /*SetRanges();
-         _xAxis = UnityEngine.Random.Range(Min.x, Max.x);
-         _zAxis = UnityEngine.Random.Range(Min.z, Max.z);
-         _xAxis1 = UnityEngine.Random.Range(Min.x, Max.x);
-         _zAxis1 = UnityEngine.Random.Range(Min.z, Max.z);
-        _randomPosition = new Vector3(_xAxis, -3f, _zAxis );
-        _randomPosition1 = new Vector3(_xAxis1, -3f, _zAxis1);
-        */
+
         Instantiate(keyPrefab[0], spawnPoints[Random.Range(0, 6)], Quaternion.identity);
         Instantiate(keyPrefab[1], spawnPoints[Random.Range(0, 6)], Quaternion.identity);
         Instantiate(keyPrefab[2], spawnPoints[Random.Range(0, 6)], Quaternion.identity);
@@ -80,16 +52,10 @@ public static void spawnPosition()
            Instantiate(keyPrefab[2], spawnPoints[Random.Range(0, 6)], Quaternion.identity);
         }
     }
-
-    private void SetRanges()
-     {
-         Min = new Vector3(14, -2, 0); 
-         Max = new Vector3(-15.5f, -2, 30);
-     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        //GetSpawnPoint();
+        
     }
 }

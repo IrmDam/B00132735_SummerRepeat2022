@@ -26,7 +26,7 @@ public class CollisionManager : MonoBehaviour
 
         void OnTriggerEnter(Collider other)
     {
-
+        //If players collide with a key, pick up sound is played and the key is destroyed. Updates key to collected. When all 3 keys are collected, WinCheck unlocks the door by destroyed the outside barrier.
         if (other.CompareTag("YellowKey"))
         {
             playerAudio.clip = collectSound;
@@ -55,13 +55,24 @@ public class CollisionManager : MonoBehaviour
             gameManager.WinCheck();
         }
 
+        //If Player hits the door, access denied sound is played, executes method that displays a message that disappears after 4 seconds
+
         if (other.CompareTag("KeyDoor"))
         {
             playerAudio.clip = deniedSound;
             playerAudio.PlayOneShot(deniedSound, 1);
             gameManager.DoorBump();
         }
- 
+           //If player leaves the first level, level 2 immdetiately starts.
+        if(other.CompareTag("Exit"))
+        {
+            gameManager.StartLevel2();
+        }
+
+        if(other.CompareTag("ExitLvl2"))
+        {
+            gameManager.WinScreen();
+        }
 
     }
 }

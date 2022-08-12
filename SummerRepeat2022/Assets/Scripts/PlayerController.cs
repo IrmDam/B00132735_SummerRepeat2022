@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     private float turnSpeed = 150.0f;
     private float speed = 6.0f;
+
     // Start is called before the first frame update
     void Start()
     {

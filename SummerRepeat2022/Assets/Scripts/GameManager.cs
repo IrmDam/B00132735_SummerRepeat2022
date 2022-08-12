@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-   public PlayerController playerController;
-   public CollisionManager collisionManager;
+    public PlayerController playerController;
+    public CollisionManager collisionManager;
     private bool ykeyStatus;
     private bool bkeyStatus;
     private bool rkeyStatus;
@@ -21,23 +21,49 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI RedKeyStatus;
     public TextMeshProUGUI Objective;
     public TextMeshProUGUI reminder;
+    public TextMeshProUGUI Timer;
+    public bool startTimer;
+    public bool timeOut;
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {
-       isWarningActive = false;
+        if (SceneManager.GetActiveScene().name.Equals("Level1"))
+        {
+            timer = 150;
+        }
+
+        if (SceneManager.GetActiveScene().name.Equals("Level2"))
+        {
+            timer = 75;
+        }
+
+        isWarningActive = false;
        ykeyStatus = false;
        rkeyStatus = false;
        bkeyStatus = false;
        UpdateScoreYellow(ykeyStatus);
        UpdateScoreRed(rkeyStatus);
        UpdateScoreBlue(bkeyStatus);
+         if(!timeOut)
+         {
+            StartCoroutine(countDownTimer());
+            startTimer = true;
+         }
        StartCoroutine(showWarning());
     }
 
     // Update is called once per frame
     void Update()
     {
+      
       WinCheck();
+      if(startTimer && !timeOut)
+      {
+         timer -= Time.deltaTime;
+         Timer.text = System.Math.Round(timer) + " seconds left";
+      }
+      timeOut = timer < 0f;
     }
 
     public void UpdateScoreYellow(bool ykeyStatus)
@@ -110,11 +136,26 @@ public class GameManager : MonoBehaviour
       SceneManager.LoadScene("Level1", LoadSceneMode.Single);
    }
 
+   public void StartLevel2()
+   {
+      SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+   }
    
+    public void StartMenu()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
+
+    public void WinScreen()
+    {
+        SceneManager.LoadScene("Win", LoadSceneMode.Single);
+        
+    }
+
    public void DoorBump()
    {
       isWarningActive = true;
-      //playerController.doorAudio.PlayOneShot(playerController.deniedSound, 0.32f);
+      
       
    }
 
@@ -132,7 +173,12 @@ public class GameManager : MonoBehaviour
       }
    }
    
-   
+      public IEnumerator countDownTimer()
+      {
+         yield return new WaitForSecondsRealtime(timer);
+         SceneManager.LoadScene("Game Over", LoadSceneMode.Single);
+      }
+
 
 
 }
