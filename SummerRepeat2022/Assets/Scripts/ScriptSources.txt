@@ -33,3 +33,17 @@ public static void spawnPosition()
     spawnPoints[2] = spawnPos2;
     spawnPoints[3] = spawnPos3;
 }
+
+
+https://www.youtube.com/watch?v=gcT6NmN3Zyo
+Used this tutorial to make a patrol path for the enemy gameobject.
+
+
+if(transform.position != pathPoints[currentPoint].position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, pathPoints[currentPoint].position, enemySpeed * Time.deltaTime);
+        }
+        else
+        {
+            currentPoint = (currentPoint + 1) % pathPoints.Length;
+        }

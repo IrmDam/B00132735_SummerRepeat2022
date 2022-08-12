@@ -7,6 +7,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] keyPrefab;
     public Vector3[] spawnPoints;
 
+
+    //Create spawn points for each key.
+    //Assign it to an array
 public static void spawnPosition()
 {
     Vector3[] spawnPoints = new Vector3[6];
@@ -32,6 +35,8 @@ public static void spawnPosition()
 
 
     // Start is called before the first frame update
+    //Keys spawn randomly between spawnpoints.
+    //If a key spawns are shared, destroy the object and then instantiate again.
     void Start()
     {
         spawnPosition();

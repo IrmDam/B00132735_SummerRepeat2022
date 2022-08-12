@@ -1,7 +1,6 @@
-https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573
+
 Enemy: https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762
 Key Particles and Outer sphere; https://assetstore.unity.com/packages/vfx/particles/powerup-particles-16458
-https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/free-low-poly-human-rpg-character-219979
 
 Pickup sound effect: https://www.dropbox.com/s/53xqc9yptiz12x1/SH2%20Recieve%20Item.mp3?dl=0
 Door Sound: https://www.youtube.com/watch?v=Ouem2uX1uHo
@@ -12,4 +11,5 @@ Victory Music: https://www.youtube.com/watch?v=dDWVEK8IXj8
 Game Over: https://www.youtube.com/watch?v=n5Fx5bWxZmE
 
 Ground Texture: https://www.google.com/search?q=ground+texture+loop+low+poly&tbm=isch&ved=2ahUKEwjwxY3MlsD5AhUIiVwKHRghCWQQ2-cCegQIABAA&oq=ground+texture+loop+low+poly&gs_lcp=CgNpbWcQAzoECCMQJ1CwA1j7D2CVEWgAcAB4AIABUYgB2QOSAQIxMJgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=T7D1YrDiB4iS8gKYwqSgBg&bih=752&biw=1569&client=firefox-b-d#imgrc=oZ3M1SA_9Nu4rM
+Heart Image: https://www.google.com/search?q=health+png+game&tbm=isch&ved=2ahUKEwitl4aSr8D5AhXNesAKHWnHCxkQ2-cCegQIABAA&oq=health+png+game&gs_lcp=CgNpbWcQAzIGCAAQHhAIMgYIABAeEAgyBggAEB4QCDIGCAAQHhAIMgYIABAeEAg6BAgjECc6BQgAEIAEOgYIABAeEAVQ3QNYjQpgtgtoAHAAeACAAZACiAH3A5IBBTUuMC4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=DMr1Yq3hD831gQbpjq_IAQ&bih=757&biw=1354&client=firefox-b-d#imgrc=q2QHJWg4tj9zRM
 Door Texture: https://www.google.com/search?q=half+life+science+door+texture&tbm=isch&ved=2ahUKEwiEh-mwmMD5AhVJOMAKHThxBsYQ2-cCegQIABAA&oq=half+life+science+door+texture&gs_lcp=CgNpbWcQAzoECCMQJzoGCAAQHhAHUKsEWOUQYN0RaAFwAHgAgAEziAGyA5IBAjEwmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=LrL1YoS4L8nwgAa44pmwDA&bih=752&biw=1569&client=firefox-b-d#imgrc=Clw1lVVFXYU2CM

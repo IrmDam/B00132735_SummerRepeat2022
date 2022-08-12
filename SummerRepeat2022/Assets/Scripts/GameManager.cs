@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //Level 1 Timer is 150 seconds
+        //Level 2 Timer is 75 seconds
         if (SceneManager.GetActiveScene().name.Equals("Level1"))
         {
             timer = 150;
@@ -66,6 +69,8 @@ public class GameManager : MonoBehaviour
       timeOut = timer < 0f;
     }
 
+    //If key is not picked up (ykeyStatus = false), the HUD shows it as an X
+    //On pickup, change X to Found!
     public void UpdateScoreYellow(bool ykeyStatus)
     {
        this.ykeyStatus = ykeyStatus;
@@ -119,6 +124,8 @@ public class GameManager : MonoBehaviour
        }
       
     }
+
+    //If all keys have been picked up, change objective text and destroy the door blocking the exit.
     public void WinCheck()
    {
       if(bkeyStatus == true && ykeyStatus == true && rkeyStatus == true)
@@ -152,13 +159,21 @@ public class GameManager : MonoBehaviour
         
     }
 
-   public void DoorBump()
+    public void GameOver()
+    {
+        SceneManager.LoadScene("Game Over", LoadSceneMode.Single);
+
+    }
+
+    //Called when colliding with door.
+    public void DoorBump()
    {
       isWarningActive = true;
       
       
    }
 
+    //When bumping the door, display reminder to get the keys. Reminder disappears after 4 seconds.
    IEnumerator showWarning()
    {
       while(true)
@@ -173,10 +188,11 @@ public class GameManager : MonoBehaviour
       }
    }
    
+    //Level timer. When timer runs out, lose the game.
       public IEnumerator countDownTimer()
       {
          yield return new WaitForSecondsRealtime(timer);
-         SceneManager.LoadScene("Game Over", LoadSceneMode.Single);
+        GameOver();
       }
 
 

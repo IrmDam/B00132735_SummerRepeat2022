@@ -9,6 +9,8 @@ public class CollisionManager : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip collectSound;
     public AudioClip deniedSound;
+    public int playerHealth = 3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -68,11 +70,36 @@ public class CollisionManager : MonoBehaviour
         {
             gameManager.StartLevel2();
         }
-
+        //Player leaving second level wins the game.
         if(other.CompareTag("ExitLvl2"))
         {
             gameManager.WinScreen();
         }
 
+        //Every time you collide with the enemy, lose a life.
+        //Every time you lose a life, destroy a heart icon from the UI
+        //When health goes to 0, lose the game.
+
+        if(other.CompareTag("Enemy"))
+        {
+            playerHealth = playerHealth- 1;
+
+            if(playerHealth == 2)
+            {
+                Destroy(GameObject.FindWithTag("Health1"));
+            }
+
+            if (playerHealth == 1)
+            {
+                Destroy(GameObject.FindWithTag("Health2"));
+            }
+
+            if (playerHealth == 0)
+            {
+                Destroy(GameObject.FindWithTag("Health3"));
+                gameManager.GameOver(); 
+            }
+            
+        }
     }
 }

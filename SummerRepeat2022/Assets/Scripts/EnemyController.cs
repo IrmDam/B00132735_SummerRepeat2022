@@ -7,33 +7,33 @@ public class EnemyController : MonoBehaviour
     private float turnSpeed = 150.0f;
     public float turnDuration = 5f;
     public float enemySpeed = .003f;
-    public bool moveEnemy = true;
-    public GameObject enemy;
+   // public bool moveEnemy = true;
+    public Transform[] pathPoints;
+    public Rigidbody enemyBody;
+    int currentPoint;
+    //public GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(enemyPattern());
+        currentPoint = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
+        if(enemyBody.transform.position != pathPoints[currentPoint].position)
+        {
+            enemyBody.transform.position = Vector3.MoveTowards(enemyBody.transform.position, pathPoints[currentPoint].position, enemySpeed * Time.deltaTime);
+        }
+        else
+        {
+            currentPoint = (currentPoint + 1) % pathPoints.Length;
+        }
         //transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
 
 
 
     }
 
-    IEnumerator enemyPattern()
-    {
-        Debug.Log("workin");
-
-            enemy.transform.Translate(0, 0, .003f);
-            yield return new WaitForSecondsRealtime(7.0f);
-            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
-            yield return new WaitForSecondsRealtime(2.0f);
-        
-    }
 }

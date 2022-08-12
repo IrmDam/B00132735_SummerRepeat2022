@@ -13,6 +13,9 @@ TagManager:
   - Exit
   - TimerTag
   - ExitLvl2
+  - Health1
+  - Health2
+  - Health3
   layers:
   - Default
   - TransparentFX

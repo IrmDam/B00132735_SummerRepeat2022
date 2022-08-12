@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
+    //  W/Arrow Up - Walk Forward
+    //  A/D or <-/-> - Turn sideways.
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
